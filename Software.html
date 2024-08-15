@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang = en>
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width = device-width", initial-scale = "1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RobotSummer2024-Team14</title>
     <style>
         body {
@@ -19,6 +19,7 @@
             padding: 20px;
             margin: 10px;
             border-radius: 8px;
+            line-height: 1.5;
             text-align: center; 
             background-color: transparent;
         }
@@ -40,9 +41,6 @@
             text-align: center; 
             background-color: transparent;
         }
-        .cen {
-            text-align: center;
-        }
         .imagestyle {
             display: block;
             margin-left: auto; 
@@ -51,55 +49,120 @@
             padding: 0;
             border-radius: 10px;
         }
+        .task-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .task-list {
+            width: 45%;
+            padding: 10px;
+            border: 1px solid rgb(0, 255, 255);
+            border-radius: 8px;
+            background-color: #110f0f;
+        }
+        .center-align {
+            padding: 10px;
+            display: block;
+            margin-left: auto; 
+            margin-right: auto; 
+        }
     </style>
 </head>
-    <body>
-        <header>
-            <h1>Software</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="Electrical.html">Electrical</a>
-                <a href="Mechanical.html">Mechanical</a>
-                <a href ="Software.html">Software</a>
-            </nav>
-        </header>
+<body>
+    <header>
+        <h1>Robot Summer 2024 - Team 14</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Electrical.html">Electrical</a>
+            <a href="Mechanical.html">Mechanical</a>
+            <a href ="Software.html">Software</a>
+        </nav>
+    </header>
 
-        <section>
-            <h2>Development Platform</h2>
-            <p>To upload our code we flashed the ESP32 from VS code using platformIO. Most of the uploads were done over microUSB however
-                we experimented with using OTA (wireless updates using wifi) for tuning and testing.
-            </p>
-        </section>
-        
-        <section>
-            <h2>Task Handling</h2>
-            <p>
-                To increase efficieny we structured our software around freeRTOS task handling. free RTOS allowed us to run multiple functions concurrently
-                meaning we could make claw adjustments and move around at the same time. It also kept our code organized and made testing much easier.
-            </p>
-        </section>
+    <section>
+        <h2>Software Overview</h2>
+        <p>To upload our code we flashed the ESP32 from VS code using platformIO. Most of the uploads were done over microUSB however
+            we experimented with using OTA (wireless updates using wifi) for tuning and testing. We used esp_now.h and Wifi.h libraries for
+            MCU communication and the ESP32Servo.h library for controlling our servo motors. Additionally we used FreeRTOS for task management
+            and scheduleing so we could run multiple functions concurrently.  
+        </p>
+    </section>
 
-        <section>
-            <h2>MCU Communication</h2>
-            <p>
-                To be successful our robots needed to communicate with one another to correctly time their actions. We used ESP-NOW wifi as our communication protocal.
-                The communication process works as follows:<br>
-                1. Robot 1 stops at the counter and gets stuck in an infinite loop<br>
-                2. Robot 2 carries out the required action<br>
-                3. Robot 2 sends a boolean flag that tells robot 1<br>
-                4. The flag breaks robot 1 out of the infinite loop and it returns to its function stack<br>
-            </p>
-        </section>
+    <section>
+        <h2>Deluxe CheeseBurger Process:</h2>
+        <div class="task-container">
+            <div class="task-list">
+                <b>Robot 1 (Serve Side)</b><br>
+                1. Go to tomato counter <br>
+                2. Pick up tomato <br>
+                3. Go to cheese counter <br>
+                4. Drop tomato on cheese <br>
+                5. Pick up tomato and cheese <br>
+                6. Line up with plate counter <br>
+                <i>7. Wait for robot 2 to place bottom bun (Flag 1)</i> <br>
+                8. Go to plate counter <br>
+                9. Drop tomato and cheese on bottom bun <br>
+                10. Go to lettuce counter <br> 
+                11. Grab lettuce <br>
+                12. Go to plate counter <br>
+                13. Drop lettuce on patty <br>
+                <i>14. Back up and wait for robot 2 to place top bun (Flag 2)</i> <br>
+                15. Grab plate with deluxe cheese burger <br>
+                16. Go to serving area <br>
+                17. Drop plate on serving area <br>
+                18. Celebrate! <br>
+            </div>
+            <div class="task-list">
+                <b>Robot 2</b><br>
+                1. Go to patty counter <br>
+                2. Grab patty <br>
+                3. Go to cook counter <br>
+                4. Drop patty on cook counter <br>
+                5. Go to bun counter <br>
+                6. Grab bottom bun <br>
+                7. Go to plate counter <br>
+                8. Drop bottom bun on plate <br>
+                <i>9. Signal robot 1 to place tomato and cheese (Flag 1)</i><br>
+                10. Go to cook counter <br>
+                11. Grab patty <br>
+                12. Go to plate counter <br>
+                13. Place patty <br>
+                14. Go to bun counter <br>
+                15. Grab top bun <br>
+                16. Go to plate counter <br>
+                17. Drop top bun <br>
+                <i>18. Back up and signal robot 1 to grab plate (Flag 2)</i><br>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Links</h2>
-            <p>View in editor: <a href="path/to/image.jpg" download>Download Image</a></p>
-            <p>View as text file: <a href="path/to/image.jpg" download>Download Image</a></p>
-        </section>
+    <section>
+        <p><br></p>
+        <h2>MCU Communication</h2>
+        <p>
+            To be successful our robots needed to communicate with one another to correctly time their actions. We used ESP-NOW wifi as our communication protocal.
+            The communication process works as follows:<br>
+        </p>
+        <div class="task-container">
+            <div class="task-list center-align">
+            1. Robot 1 waits behind counter<br>
+            2. Robot 2 carries out the required action<br>
+            3. Robot 2 sends a boolean that tells robot 1 to resume action<br>
+            4. Robot 1 returns to its function stack <br>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>By Cassidy MacPherson, Lydia Davidson, Nora Shao, Harriet Milligan</p>
-        </footer>
+    <section>
+        <p><br></p>
+        <h2>Links to View Code</h2>
+        <p>Project Folder: <a href="Code/Robot1Master.zip" download style = "color: rgb(0, 255, 255)">Download Robot1Master.zip</a></p>
+        <p>View Src in Browser: <a href="Code/Robot1Master.txt" download style = "color: rgb(0, 255, 255)">Robot1MasterSrc.txt</a></p>
+        <p><br></p>
+    </section>
 
-    </body>
+    <footer>
+        <p>By Cassidy MacPherson, Lydia Davidson, Nora Shao, Harriet Milligan</p>
+    </footer>
+</body>
 </html>
