@@ -65,35 +65,43 @@
         </header>
 
         <section>
+            <p><br></p>
             <h2>Microcontroller</h2>
             <p>The MCU we chose for this project was an ESP32 Pico V3. Among all the MCU's availible to us it had the most PWM channels as well as the
                 best options for reliable wireless communication. It was also overspecced in clock rate and flash memory which allowed us more freedom
                 in software.
             </p>
-            <!--pinout-->
+            <!--pinout (see code for pin definitions)-->
         </section>
 
         <section>
+            <p><br></p>
             <h2>Motor Driver</h2>
             <p>
-                We used a dual H-bridge powered by a LTC1661? gate driver to power the DC motors.
+                We used a dual H-bridge powered by a LTC1161? gate driver to power the DC motors.
                 We had two dual H-bridge PCBs on each robot, one was used for both drive wheels and the other was used for
                 the lead screw motor.
             </p>
-            <!--pcb pic and circuit diagram-->
+            <p><br></p>
+            <img src="RobotSummerPhotos/hbridge.JPG" alt="hbridgePCB"  width ="50%;" height ="50%;" class ="imagestyle">
+            <!--dual hbridge circuit diagram-->
         </section>
 
         <section>
+            <p><br></p>
             <h2>IR Reflectance Sensors</h2>
             <p>
                 TRCT005? reflectance sensors were used to sense black tape on the competition surface which was essential to navigation. We used four sensors out front to
                 follow the tape and one on each side to detect when to turn. Each sensor was accompanied by a PCB with a potentiometer that allowed us to control the LOW/HIGH 
                 threshold depending on our desire sensitivy to tape sensing and the ambient lighting.
             </p>
-            <!--pcb pic and circuit diagram-->
+            <p><br></p>
+            <img src="RobotSummerPhotos/IRreflectance.JPG" alt="reflectancePCB"  width ="50%;" height ="50%;" class ="imagestyle">
+            <!--digital reflectance sensor circuit diagram-->
         </section>
 
         <section>
+            <p><br></p>
             <h2>Rotary Encoding</h2>
             <p>
                 Precise position control was important for navigation of the surface so we needed accurate rotary encoding. We used a 1:1 gear ratio from the
@@ -101,10 +109,13 @@
                 threshold resistance was used to ensure that the encoder was correctly counting the number of ticks. The encoders we used had 24 clicks per revolution so by
                 attaching interupts on rising and falling edges we were able to get a count of 96 per revolution.
             </p>
-            <!--pcb pic and circuit diagram-->
+            <p><br></p>
+            <img src="RobotSummerPhotos/rotaryDebounce.JPG" alt="rotaryPCB"  width ="50%;" height ="50%;" class ="imagestyle">
+            <!--rotary debouncer circuit diagram-->
         </section>
 
         <section>
+            <p><br></p>
             <h2>Multiplexer</h2>
             <p>
                 Due to the limited amount of GPIO pins on the MCU we used a 8:1 multiplexer to
@@ -117,12 +128,14 @@
         </section>
 
         <section>
+            <p><br></p>
             <h2>Power Management</h2>
             <p>
                 Each robot had three 8V/550mAh LiPo batteries for controlling our logic circuits and one 12V/1.3Ah LiPo battery for driving the motors.
                 Each battery was connected to a DC-DC buck converter with a potentiometer for adjustable voltage output as well as a 1&mu;F capacitor
                 to remove noise from the line. There were also switches mounted on the chassis to turn on and off each battery.
             </p>
+            <p><br></p>
             <!--pcb pic if we have it-->
         </section>
 

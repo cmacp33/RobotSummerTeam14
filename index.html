@@ -19,6 +19,7 @@
             padding: 20px;
             margin: 10px;
             border-radius: 8px;
+            line-height: 1.5;
             text-align: center; 
             background-color: transparent;
         }
@@ -51,8 +52,16 @@
             padding: 0;
             border-radius: 10px;
         }
-
     </style>
+     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+     <script type="importmap">
+       {
+         "imports": {
+           "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+           "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+         }
+       }
+     </script>
 </head>
 <body>
     <header>
@@ -66,6 +75,7 @@
     </header>
 
     <section>
+        <p><br></p>
         <h2>Project Overview</h2>
         <p>This project was made in ENPH253, more commonly referred to as robot summer.
             ENPH253 is the one and only course taken by second year UBC Engineering Physics student in summer term 2.
@@ -74,7 +84,8 @@
             effort we all learned a lot about prototyping, troubleshooting, design, and much more.
         </p>
         <p><br></p>
-        <!--pic of robots-->
+        <img src="RobotSummerPhotos/robot12.jpeg" alt="BuddyBots"  width ="90%;" height ="90%;" class ="imagestyle">
+        <p><br></p>
     </section>
 
     <section>
@@ -86,12 +97,14 @@
         </p>
         <p><br></p>
         <h1 class="cen">Competition Layout</h1>
-        <img src="RobotSummerPhotos/robotSummerCompSurface.png" alt="CompSurface"  width ="60%;" height ="60%;" class ="imagestyle">
+        <img src="RobotSummerPhotos/robotSummerCompSurface.png" alt="CompSurface"  width ="75%;" height ="75%;" class ="imagestyle">
         <p><br></p>
         <h1 class="cen">Points Table</h1>
-        <img src="RobotSummerPhotos/robotSummerPointTable.png" alt="PointTable" width = "60%;" height = "60%;" class ="imagestyle"> 
+        <img src="RobotSummerPhotos/robotSummerPointTable.png" alt="PointTable" width = "75%;" height = "75%;" class ="imagestyle"> 
         <p><br></p>
     </section>
+
+    <script type="module" src="./main.js"></script>
 
     <footer>
         <p>By Cassidy MacPherson, Lydia Davidson, Nora Shao, Harriet Milligan</p>
