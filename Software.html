@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang = en>
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width", initial-scale = "1.0">
+    <title>RobotSummer2024-Team14</title>
+    <style>
+        body {
+            font-family: Cambria, sans-serif;
+            margin: 0 100px;
+            padding: 20px;
+            background-color: #110f0f;
+            font-size: 18px; 
+            line-height: 1.5;
+        }
+        header {
+            border: 2px solid rgb(0, 255, 255);
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center; 
+            background-color: transparent;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        section {
+            color: white;
+            margin: 20px 0;
+        }
+        footer {
+            border: 2px solid rgb(0, 255, 255);
+            color: white;
+            padding: 0px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center; 
+            background-color: transparent;
+        }
+        .cen {
+            text-align: center;
+        }
+        .imagestyle {
+            display: block;
+            margin-left: auto; 
+            margin-right: auto; 
+            border: 20px double rgb(0, 255, 255);
+            padding: 0;
+            border-radius: 10px;
+        }
+    </style>
+    <body>
+        <header>
+            <h1>Software</h1>
+            <nav>
+                <a href="Home.html">Home</a>
+                <a href="Electrical.html">Electrical</a>
+                <a href="Mechanical.html">Mechanical</a>
+                <a href ="Software.html">Software</a>
+            </nav>
+        </header>
+
+        <section>
+            <h2>Task Handling</h2>
+            <p>
+                To increase efficieny we structured our software around freeRTOS task handling. free RTOS allowed us to run multiple functions concurrently
+                meaning we could make claw adjustments and move around at the same time. It also kept our code organized and made testing much easier.
+            </p>
+        </section>
+
+        <section>
+            <h2>MCU Communication</h2>
+            <p>
+                To be successful our robots needed to communicate with one another to correctly time their actions. We used ESP-NOW wifi as our communication protocal.
+                The communication process works as follows:<br>
+                1. Robot 1 stops at the counter and gets stuck in an infinite loop<br>
+                2. Robot 2 carries out the required action<br>
+                3. Robot 2 sends a boolean flag that tells robot 1<br>
+                4. The flag breaks robot 1 out of the infinite loop and it returns to its function stack<br>
+            </p>
+        </section>
+
+        <section>
+            <h2>Links</h2>
+            <p>View in editor: <a href="path/to/image.jpg" download>Download Image</a></p>
+            <p>View as text file: <a href="path/to/image.jpg" download>Download Image</a></p>
+        </section>
+
+        <footer>
+            <p>By Cassidy MacPherson, Lydia Davidson, Nora Shao, Harriet Milligan</p>
+        </footer>
+
+    </body>
+</head>
+</html>
