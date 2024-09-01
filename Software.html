@@ -81,10 +81,11 @@
 
     <section>
         <h2>Software Overview</h2>
-        <p>To upload our code we flashed the ESP32 from VS code using platformIO. Most of the uploads were done over microUSB however
-            we experimented with using OTA (wireless updates using wifi) for tuning and testing. We used esp_now.h and Wifi.h libraries for
-            MCU communication and the ESP32Servo.h library for controlling our servo motors. Additionally we used FreeRTOS for task management
-            and scheduleing so we could run multiple functions concurrently.  
+        <p>To upload our code, we flashed the ESP32 from VS Code using PlatformIO. Most of the uploads were done 
+            over micro USB, however, we experimented with OTA (wireless updates using wifi) for tuning and testing. 
+            We used esp_now.h and Wifi.h libraries for MCU communication and the ESP32Servo.h library for controlling 
+            our servo motors. Additionally, we used FreeRTOS for task management and scheduling to run multiple 
+            functions concurrently. 
         </p>
     </section>
 
@@ -99,14 +100,14 @@
                 4. Drop tomato on cheese <br>
                 5. Pick up tomato and cheese <br>
                 6. Line up with plate counter <br>
-                <i>7. Wait for robot 2 to place bottom bun (Flag 1)</i> <br>
+                <i>7. Wait for Robot 2 to place bottom bun (Flag 1)</i> <br>
                 8. Go to plate counter <br>
                 9. Drop tomato and cheese on bottom bun <br>
                 10. Go to lettuce counter <br> 
                 11. Grab lettuce <br>
                 12. Go to plate counter <br>
                 13. Drop lettuce on patty <br>
-                <i>14. Back up and wait for robot 2 to place top bun (Flag 2)</i> <br>
+                <i>14. Back up and wait for Robot 2 to place top bun (Flag 2)</i> <br>
                 15. Grab plate with deluxe cheese burger <br>
                 16. Go to serving area <br>
                 17. Drop plate on serving area <br>
@@ -122,7 +123,7 @@
                 6. Grab bottom bun <br>
                 7. Go to plate counter <br>
                 8. Drop bottom bun on plate <br>
-                <i>9. Signal robot 1 to place tomato and cheese (Flag 1)</i><br>
+                <i>9. Signal Robot 1 to place tomato and cheese (Flag 1)</i><br>
                 10. Go to cook counter <br>
                 11. Grab patty <br>
                 12. Go to plate counter <br>
@@ -131,7 +132,7 @@
                 15. Grab top bun <br>
                 16. Go to plate counter <br>
                 17. Drop top bun <br>
-                <i>18. Back up and signal robot 1 to grab plate (Flag 2)</i><br>
+                <i>18. Back up and signal Robot 1 to grab plate (Flag 2)</i><br>
             </div>
         </div>
     </section>
@@ -140,14 +141,14 @@
         <p><br></p>
         <h2>MCU Communication</h2>
         <p>
-            To be successful our robots needed to communicate with one another to correctly time their actions. We used ESP-NOW wifi as our communication protocal.
-            The communication process works as follows:<br>
+            To be successful, our robots needed to communicate with one another to correctly time their actions. 
+            We used ESP-NOW wifi as our communication protocol. The communication process works as follows:<br>
         </p>
         <div class="task-container">
             <div class="task-list center-align">
             1. Robot 1 waits behind counter<br>
             2. Robot 2 carries out the required action<br>
-            3. Robot 2 sends a boolean that tells robot 1 to resume action<br>
+            3. Robot 2 sends a boolean that tells Robot 1 to resume action<br>
             4. Robot 1 returns to its function stack <br>
             </div>
         </div>
